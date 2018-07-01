@@ -17,7 +17,7 @@ int main(void)
 
   if (num > 45)
   {
-    printf("sorry that term is too high\n");
+    printf("sorry that term is too high!\n");
     return 0;
   }
 
