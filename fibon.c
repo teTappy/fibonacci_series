@@ -2,20 +2,20 @@
 
 #define G_RATIO 1.6180339887498948482
 
-void fib_terms(double *n, double *m, int num);
+void fib_terms(long long *n, long long *m, int num);
 
-void print_terms(double a, int num);
+void print_terms(long long a, int num);
 
 int main(void)
 {
   double ratio, percent;
   int num;
-  double a;
-  double b;
+  long long a;
+  long long b;
   printf("Enter an int(n) to find the n'th term of fib series\n");
   scanf("%i", &num);
 
-  if (num > 50)
+  if (num > 45)
   {
     printf("sorry that term is too high\n");
     return 0;
@@ -24,7 +24,7 @@ int main(void)
   fib_terms(&a, &b, num);
   print_terms(a, num);
 
-  ratio = a / b;
+  ratio = a / (double) b;
 
   if (ratio < G_RATIO)
   {
@@ -46,10 +46,10 @@ int main(void)
   return 0;
 }
 
-void fib_terms(double *n, double *m, int num)
+void fib_terms(long long *n, long long *m, int num)
 {
-  int a = 0;
-  int b = 1;
+  long long a = 0;
+  long long b = 1;
   int tmp;
 
   for (int i = 0; i < num; i++)
@@ -63,22 +63,22 @@ void fib_terms(double *n, double *m, int num)
   *m = a;
 }
 
-void print_terms(double a, int num)
+void print_terms(long long a, int num)
 {
   if ((num == 1 || (num % 10) == 1) && num != 11)
   {
-    printf("The %ist term of the fibonacci series is: %.01f\n", num, a);
+    printf("The %ist term of the fibonacci series is: %lli\n", num, a);
   }
   else if ((num == 2 || (num % 10) == 2) && num != 12)
   {
-    printf("The %ind term of the fibonacci series is: %.01f\n", num, a);
+    printf("The %ind term of the fibonacci series is: %lli\n", num, a);
   }
   else if ((num == 3 || (num % 10) == 3) && num != 13)
   {
-    printf("The %ird term of the fibonacci series is: %.01f\n", num, a);
+    printf("The %ird term of the fibonacci series is: %lli\n", num, a);
   }
   else
   {
-    printf("The %ith term of the fibonacci series is: %.01f\n", num, a);
+    printf("The %ith term of the fibonacci series is: %.lli\n", num, a);
   }
 }
